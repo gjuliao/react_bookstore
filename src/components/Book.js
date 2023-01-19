@@ -1,10 +1,10 @@
-/* eslint-disable no-console, react/destructuring-assignment */
+/* eslint-disable no-console */
 import React from 'react';
 import propTypes from 'prop-types';
 import Form from './Form';
 
-const Book = (props) => {
-  const { author, title } = props.books;
+const Book = ({ books }) => {
+  const { author, title } = books;
 
   return (
     <>
