@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Book from './components/Book';
 import Form from './components/Form';
+import Navbar from './components/Navbar';
 
 const App = () => {
   const [books, setBooks] = useState({
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <>
       <div className="App">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Book books={books} />} />
           <Route path="/form" element={<Form />} />
