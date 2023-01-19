@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react';
 import propTypes from 'prop-types';
 import Form from './Form';
