@@ -1,6 +1,7 @@
 /* eslint-disable no-console, react/destructuring-assignment */
 import React from 'react';
 import propTypes from 'prop-types';
+import Form from './Form';
 
 const Book = (props) => {
   const { author, title } = props.books;
@@ -29,6 +30,7 @@ const Book = (props) => {
           <button type="button">UPDATE PROGRESS</button>
         </div>
       </div>
+      <Form />
     </>
   );
 };

@@ -6,7 +6,7 @@ const Navbar = () => (
     <h1>Bookstore CMS</h1>
     <ul>
       <NavLink to="/">Books</NavLink>
-      <NavLink to="/">Categories</NavLink>
+      <NavLink to="/categories">Categories</NavLink>
     </ul>
   </nav>
 );

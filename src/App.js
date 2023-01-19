@@ -3,8 +3,8 @@ import './index.css';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Book from './components/Book';
-import Form from './components/Form';
 import Navbar from './components/Navbar';
+import CheckStatus from './components/CheckStatus';
 
 const App = () => {
   const [books, setBooks] = useState({
@@ -19,7 +19,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Book books={books} />} />
-          <Route path="/form" element={<Form />} />
+          <Route exact path="categories" element={<CheckStatus />} />
         </Routes>
       </div>
     </>
