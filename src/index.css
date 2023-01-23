@@ -11,6 +11,58 @@
   margin-top: 2%;
 }
 
+/* --Nav Bar --*/
+.navbar {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  background-color: lightblue;
+  padding: 0.7em;
+}
+
+.navbar h1 {
+  font-size: 1.9em;
+  padding-left: 4%;
+}
+
+.nav_link {
+  margin-right: 2em;
+}
+
+.nav_list {
+  display: flex;
+  width: 50%;
+}
+
+/* --Card--*/
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+  min-height: 5em;
+  width: 90%;
+}
+
+.main_tile,
+.completed_tile,
+.chapter_tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 27%;
+}
+
 .book_button_list {
-  list-style: none;
+  list-style: none;  
+  display: flex;
+}
+
+.book_button_list a {
+  text-decoration: none;
+}
+
+.book_button_list li {
+  margin-left: 2.5%;
 }
