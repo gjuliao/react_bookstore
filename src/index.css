@@ -9,6 +9,7 @@
   width: 90%;
   margin: auto;
   margin-top: 2%;
+  background-color: gray;
 }
 
 /* --Nav Bar --*/
@@ -43,15 +44,30 @@
   margin-bottom: 1.5em;
   min-height: 5em;
   width: 90%;
+  background-color: white;
+  padding: 1em;
 }
 
 .main_tile,
-.completed_tile,
 .chapter_tile {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 27%;
+}
+
+.main_tile h1 {
+  font-size: 1.3em;
+  padding-bottom: 0.4%;
+}
+
+.main_tile h2 {
+  color: lightblue;
+  padding-bottom: 2.5%;
+}
+
+.book_genre {
+  color: gray;
 }
 
 .book_button_list {
@@ -64,5 +80,30 @@
 }
 
 .book_button_list li {
-  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.completed_tile {
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+  align-items: center;
+}
+
+.completed_tile_content h1 {
+  font-size: 1.2em;
+  padding-bottom: 0.4%;
+}
+
+.chapter_tile h4 {
+  color: gray;
+}
+
+.chapter_tile button {
+  width: 55%;
+  font-size: 0.7em;
+  color: white;
+  background-color: blue;
+  border-style: none;
+  padding: 0.5em;
 }
