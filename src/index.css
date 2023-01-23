@@ -19,6 +19,7 @@
   justify-content: space-between;
   background-color: lightblue;
   padding: 0.7em;
+  margin: auto;
 }
 
 .navbar h1 {
@@ -40,8 +41,7 @@
 .card {
   display: flex;
   justify-content: space-between;
-  margin-top: 2em;
-  margin-bottom: 1.5em;
+  margin: auto;
   min-height: 5em;
   width: 90%;
   background-color: white;
