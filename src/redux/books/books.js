@@ -5,9 +5,9 @@ const initialState = {
   books: [],
 };
 
-const bookSlice = (state = initialState, action) => {
+const bookReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_BOOK: return (state = initialState, book) => [...state, ...state.push(book)];
+    case ADD_BOOK: return [...state, action.payload];
     case REMOVE_BOOK: return (state = initialState, index) => [...state.splice(0, index),
       ...state.splice(index + 1, state.length)];
     default: return state;
@@ -16,12 +16,12 @@ const bookSlice = (state = initialState, action) => {
 
 export const newBook = (book) => ({
   type: ADD_BOOK,
-  book,
+  payload: book,
 });
 
 export const removeBook = (index) => ({
   type: REMOVE_BOOK,
-  index,
+  payload: index,
 });
 
-export default bookSlice.reducer;
+export default bookReducer;
