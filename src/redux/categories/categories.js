@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -9,8 +8,9 @@ const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
-    add_categories: () => { console.log('adding book'); },
-    remove_categories: () => { console.log('removing book'); },
+    add_category: (state = initialState, category) => [...state, ...state.push(category)],
+    remove_category: (state = initialState, index) => [...state.splice(0, index),
+      ...state.splice(index + 1, state.length)],
   },
 });
 
