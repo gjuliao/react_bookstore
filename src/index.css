@@ -22,6 +22,11 @@
   margin: auto;
 }
 
+.navbar_main {
+  display: flex;
+  width: 40%;
+}
+
 .navbar h1 {
   font-size: 1.9em;
   padding-left: 4%;
@@ -33,7 +38,16 @@
 
 .nav_list {
   display: flex;
-  width: 50%;
+  margin-left: 10%;
+  padding-top: 2.8%;
+}
+
+.nav_list a {
+  text-decoration: none;
+}
+
+.nav_list_user {
+  padding-top: 1.3%;
 }
 
 /* --Card--*/
@@ -46,6 +60,7 @@
   width: 90%;
   background-color: white;
   padding: 1em;
+  margin-top: 2em;
 }
 
 .main_tile,
