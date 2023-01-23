@@ -8,8 +8,8 @@ const initialState = {
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK: return [...state, action.payload];
-    case REMOVE_BOOK: return (state = initialState, index) => [...state.splice(0, index),
-      ...state.splice(index + 1, state.length)];
+    case REMOVE_BOOK: return (payload) => [...state.splice(0, payload),
+      ...state.splice(payload + 1, state.length)];
     default: return state;
   }
 };
