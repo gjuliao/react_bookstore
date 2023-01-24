@@ -4,13 +4,13 @@ import { checkStatus } from '../redux/categories/categories';
 
 const CheckStatus = () => {
   const dispatch = useDispatch();
-  const status = useSelector((state) => state.categories);
+  const status = useSelector((state) => state.categories.text);
   const handleClick = (e) => {
     dispatch(checkStatus(e.target.innerHTML));
   };
   return (
-    <div>
-      <p>{status}</p>
+    <div className="checkstatus">
+      <h2>{status}</h2>
       <button onClick={handleClick} type="button">CheckStatus</button>
     </div>
   );

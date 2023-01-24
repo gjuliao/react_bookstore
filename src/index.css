@@ -14,3 +14,8 @@
 .book_button_list {
   list-style: none;
 }
+
+.checkstatus h2 {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
