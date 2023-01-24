@@ -10,16 +10,15 @@ const categoriesReducer = (state = initialState, action) => {
     case CHECK_STATUS:
       return {
         ...state,
-        text: action.payload,
+        text: 'UNDER CONSTRUCTION',
       };
     default:
       return state;
   }
 };
 
-export const checkStatus = (text) => ({
+export const checkStatus = () => ({
   type: CHECK_STATUS,
-  payload: text,
 });
 
 export default categoriesReducer;
