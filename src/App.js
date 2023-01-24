@@ -1,17 +1,13 @@
 /* eslint-disable no-unused-vars */
 import './index.css';
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import Book from './components/Book';
 import Navbar from './components/Navbar';
 import CheckStatus from './components/CheckStatus';
 
 const App = () => {
-  const [books, setBooks] = useState({
-    id: 1,
-    author: 'JK Rowlings',
-    title: 'Harry Potter',
-  });
+  const books = useSelector((state) => state.books.books);
 
   return (
     <>
