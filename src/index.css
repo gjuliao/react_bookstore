@@ -131,11 +131,30 @@
   margin-top: 2em;
 }
 
+.book_form h3 {
+  margin-bottom: 1.5em;
+}
+
 .book_form_inputs {
   margin: auto;
-  width: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2em;
 }
 
 .book_form_inputs input {
   margin-right: 2em;
+}
+
+.book_form_inputs_title {
+  width: 60%;
+}
+
+.book_form_inputs_category {
+  width: 20%;
+}
+
+.book_form_inputs button {
+  width: 10%;
 }
