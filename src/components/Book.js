@@ -1,16 +1,17 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
-import propTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import Form from './Form';
 import Card from './Card';
 
-const Book = ({ books }) => {
-  const { author, title } = books;
+const Book = () => {
+  const books = useSelector((state) => state.books);
+  // eslint-disable-next-line no-console
+  console.log(books.length);
 
   return (
     <>
       { books.map((book) => (
-        <Card key={book.id} author={book.author} title={book.title} />
+        <Card key={book.id} id={book.id} author={book.author} title={book.title} />
       ))}
       <Form />
     </>
@@ -18,13 +19,3 @@ const Book = ({ books }) => {
 };
 
 export default Book;
-
-Book.defaultProps = {
-  books: null,
-  author: '',
-};
-
-Book.propTypes = {
-  books: propTypes.instanceOf(Object),
-  author: propTypes.string,
-};

@@ -1,20 +1,24 @@
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
-const initialState = {
-  books: [
-    {
-      id: 0,
-      author: 'JK Rowlings',
-      title: 'Harry Potter',
-    },
-    {
-      id: 1,
-      author: 'Ken Follet',
-      title: 'Fire',
-    },
-  ],
-};
+// eslint-disable-next-line no-unused-vars
+const initialState = [
+  {
+    id: 0,
+    author: 'JK Rowlings',
+    title: 'Harry Potter',
+  },
+  {
+    id: 1,
+    author: 'Ken Follet',
+    title: 'Fire',
+  },
+  {
+    id: 3,
+    author: 'Kalani Pickhart',
+    title: 'I will die in a foreign land',
+  },
+];
 
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -25,10 +29,12 @@ const bookReducer = (state = initialState, action) => {
   }
 };
 
-export const newBook = (book) => ({
-  type: ADD_BOOK,
-  payload: book,
-});
+export function newBook(book) {
+  return {
+    type: ADD_BOOK,
+    payload: book,
+  };
+}
 
 export const removeBook = (index) => ({
   type: REMOVE_BOOK,
@@ -36,3 +42,4 @@ export const removeBook = (index) => ({
 });
 
 export default bookReducer;
+export { ADD_BOOK, REMOVE_BOOK };
