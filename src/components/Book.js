@@ -5,8 +5,6 @@ import Card from './Card';
 
 const Book = () => {
   const books = useSelector((state) => state.books);
-  // eslint-disable-next-line no-console
-  console.log(books.length);
 
   return (
     <>

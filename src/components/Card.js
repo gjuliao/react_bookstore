@@ -1,15 +1,15 @@
-/* eslint-disable no-console */
-import React from 'react';
+/* eslint-disable no-console, no-unused-vars */
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
-// import { useDispatch } from 'react-redux';
-// import { removeBook } from '../redux/books/books';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 const Card = ({ title, author, id }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(e.target.id);
-    // dispatch(removeBook(e.target.id));
+    dispatch(removeBook(parseInt(e.target.id, 10)));
   };
 
   return (
