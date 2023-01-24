@@ -1,5 +1,4 @@
-/* eslint-disable no-console, no-unused-vars */
-import React, { useState } from 'react';
+import React from 'react';
 import propTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';

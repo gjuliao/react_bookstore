@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { newBook } from '../redux/books/books';
@@ -12,7 +11,6 @@ const Form = () => {
     const id = Math.floor(Math.random() * 100);
     const book = { title, author, id };
     dispatch(newBook(book));
-    console.log('Book Added');
   };
 
   return (
