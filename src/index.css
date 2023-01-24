@@ -122,3 +122,20 @@
   border-style: none;
   padding: 0.5em;
 }
+
+/* --Card--*/
+
+.book_form {
+  width: 90%;
+  margin: auto;
+  margin-top: 2em;
+}
+
+.book_form_inputs {
+  margin: auto;
+  width: 50%;
+}
+
+.book_form_inputs input {
+  margin-right: 2em;
+}
