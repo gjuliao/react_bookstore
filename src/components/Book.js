@@ -6,8 +6,6 @@ import Card from './Card';
 
 const Book = () => {
   const books = useSelector((state) => state.books);
-  // eslint-disable-next-line no-console
-  console.log(books);
 
   const dispatch = useDispatch();
 
@@ -19,7 +17,7 @@ const Book = () => {
     <>
       { books.map((book) => (
         // eslint-disable-next-line max-len
-        <Card key={book.item_id} book={parseInt(book.item_id, 10)} author={book.author} title={book.title} />
+        <Card key={book.item_id} id={book.item_id} author={book.author} title={book.title} />
       ))}
       <Form />
     </>

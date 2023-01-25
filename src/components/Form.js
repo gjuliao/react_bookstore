@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { postBook } from '../redux/books/books';

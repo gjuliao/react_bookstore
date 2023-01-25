@@ -1,8 +1,5 @@
-/* eslint-disable no-console */
 import axios from '../axiosInstance';
 
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
 const GET_BOOKS = 'GET_BOOKS';
 const POST_BOOKS = 'POST_BOOKS';
 const DELETE_BOOK = 'DELETE_BOOK';
@@ -16,11 +13,9 @@ export const fetchData = async (dispatch) => {
     }));
 
     if (res.status === 200) {
-      console.log('GET request working', books);
       dispatch({ type: GET_BOOKS, payload: books });
     }
   } catch (error) {
-    console.log('Error in GET request', error.message);
     throw new Error(error);
   }
 };
@@ -32,22 +27,22 @@ export const postBook = (book) => async (dispatch) => {
     const res = await postApi(book);
 
     if (res.status === 201) {
-      console.log('POST request successful', book);
       dispatch({ type: POST_BOOKS, payload: book });
     }
   } catch (error) {
-    console.log('Error in POST request', error.message);
     throw new Error(error);
   }
 };
 
 export const deleteData = (id) => async (dispatch) => {
+  const deleteApi = (data) => axios.delete(`books/${id}`, data);
   try {
-    const res = await axios.delete('books/item_id');
-    console.log(res);
-    dispatch({ type: 'DELETE_BOOK', payload: id });
+    const res = await deleteApi(id);
+    if (res.status === 201) {
+      dispatch({ type: DELETE_BOOK, payload: id });
+    }
   } catch (error) {
-    console.log('Error in DELETE request', error.message);
+    throw new Error(error);
   }
 };
 
@@ -63,24 +58,10 @@ const bookReducer = (state = initialState2, action) => {
         author: action.payload.author,
         category: action.payload.category,
       }];
-    case DELETE_BOOK: return state.filter((book) => book.id !== action.id);
+    case DELETE_BOOK: return state.filter((book) => book.item_id !== action.payload);
     default: return state;
   }
 };
-
-export function newBook(book) {
-  return {
-    type: ADD_BOOK,
-    book,
-  };
-}
-
-export function removeBook(id) {
-  return {
-    type: REMOVE_BOOK,
-    id,
-  };
-}
 
 export default bookReducer;
 export { GET_BOOKS, POST_BOOKS, DELETE_BOOK };
