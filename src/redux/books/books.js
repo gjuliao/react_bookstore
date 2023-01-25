@@ -25,18 +25,19 @@ export const fetchData = async (dispatch) => {
   }
 };
 
-fetchData();
-
 export const postBook = (book) => async (dispatch) => {
+  const postApi = (data) => axios.post('books', data);
+
   try {
-    const res = await axios.post('books', book);
+    const res = await postApi(book);
 
     if (res.status === 201) {
       console.log('POST request successful', book);
-      dispatch({ type: 'POST_BOOKS', payload: book });
+      dispatch({ type: POST_BOOKS, payload: book });
     }
   } catch (error) {
     console.log('Error in POST request', error.message);
+    throw new Error(error);
   }
 };
 
@@ -50,32 +51,18 @@ export const deleteData = (id) => async (dispatch) => {
   }
 };
 
-// const initialState = [
-//   {
-//     id: Math.floor(Math.random() * 100),
-//     author: 'JK Rowlings',
-//     title: 'Harry Potter',
-//   },
-//   {
-//     id: Math.floor(Math.random() * 100),
-//     author: 'Ken Follet',
-//     title: 'Fire',
-//   },
-//   {
-//     id: Math.floor(Math.random() * 100),
-//     author: 'Kalani Pickhart',
-//     title: 'I will die in a foreign land',
-//   },
-// ];
-
 const initialState2 = [];
 
 const bookReducer = (state = initialState2, action) => {
   switch (action.type) {
     case GET_BOOKS: return action.payload;
-    //  case ADD_BOOK: { return [...state, action.book]; }
-    case POST_BOOKS: { return [...state, action.book]; }
-    //  case REMOVE_BOOK: return state.filter((book) => book.id !== action.id);
+    case POST_BOOKS: return [...state,
+      {
+        item_id: action.payload.item_id,
+        title: action.payload.title,
+        author: action.payload.author,
+        category: action.payload.category,
+      }];
     case DELETE_BOOK: return state.filter((book) => book.id !== action.id);
     default: return state;
   }
