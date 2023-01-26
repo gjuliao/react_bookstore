@@ -11,7 +11,11 @@ const Navbar = () => (
         <NavLink className="nav_link" to="/categories">Categories</NavLink>
       </ul>
     </div>
-    <div className="nav_list_user">User</div>
+    <div className="nav_list_user">
+      <span className="material-symbols-outlined">
+        account_circle
+      </span>
+    </div>
   </nav>
 );
 

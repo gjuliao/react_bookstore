@@ -142,7 +142,6 @@ body {
 .completed_tile {
   display: flex;
   justify-content: space-around;
-  width: 15%;
   align-items: center;
 }
 
@@ -151,30 +150,49 @@ body {
   padding-bottom: 0.4%;
 }
 
+.completed_tile_secondary {
+  border-right: solid;
+  padding-right: 3em;
+  border-width: 1px;
+  border-color: lightgray;;
+}
+
 .completed_tile_secondary h1 {
   font-size: 2rem;
-  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-family: "Roboto Slab", serif;
+  padding-left: 18%;
+  opacity: 0.7;
 }
 
 .circular {
   height: 4em;
-  color: #0290ff;;
+  color: #0290ff;
+  padding-right: 1em;
 }
 
 .completed_tile_secondary h4 {
-  font-size:.875rem;
-  opacity:.5;
+  font-size: .875rem;
+  opacity: .5;
+  font-family: "Roboto Slab", serif !important;
+  font-weight: 300;
 }
 
 .chapter_tile h4 {
   font-size:.813rem;
   opacity:.5;
   margin-bottom: -1rem;
+  font-family: "Roboto Slab", serif !important;
+  font-weight: 300;
+  padding-bottom: 6%;
 }
 
 .chapter_tile h3 {
   font-size:1rem;
   letter-spacing:.4px;
+  font-family: "Roboto Slab", serif !important;
+  font-weight: 300;
+  padding-bottom: 15%;
 }
 
 .chapter_tile button {
@@ -184,6 +202,8 @@ body {
   background-color:#0290ff;
   border-style: none;
   padding: 1em;
+  font-family: "Roboto Slab", serif !important;
+  font-weight: 300;
 }
 
 /* --Card--*/
@@ -242,4 +262,19 @@ body {
 .checkstatus h2 {
   padding-top: 2em;
   padding-bottom: 1em;
+}
+
+input[type=text] {
+  padding: 1em;
+  border: 1px solid lightgray;
+  opacity: 0.5;
+}
+
+.material-symbols-outlined {
+  color:#0290ff;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }

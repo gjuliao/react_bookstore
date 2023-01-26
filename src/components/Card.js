@@ -31,7 +31,7 @@ const Card = ({ title, author, id }) => {
         <div className="completed_tile">
           <CircularProgressbar className="circular" value={percentage} text={`${percentage}%`} />
           <div className="completed_tile_secondary">
-            <h1>8%</h1>
+            <h1>66%</h1>
             <h4>Completed</h4>
           </div>
         </div>
