@@ -23,10 +23,12 @@ const Form = () => {
 
   return (
     <div className="book_form">
+      <br />
+      <h1>ADD NEW BOOK</h1>
       <form className="book_form_inputs" onSubmit={handleSubmit}>
         <input className="book_form_inputs_title" onChange={(e) => setTitle(e.target.value)} value={title} name="title" type="text" placeholder="Book title" required />
         <input className="book_form_inputs_category" onChange={(e) => setAuthor(e.target.value)} value={author} name="author" type="text" placeholder="Book Author" required />
-        <button type="submit">Add Book</button>
+        <button type="submit">ADD BOOK</button>
       </form>
     </div>
   );
