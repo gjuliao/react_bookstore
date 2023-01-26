@@ -13,8 +13,8 @@ const Card = ({ title, author, id }) => {
 
   return (
     <>
-      <div>
-        <h4>Science Fiction</h4>
+      <div className="card">
+        <h4 className="book_genre">Science Fiction</h4>
         <h1>{title}</h1>
         <h2>{author}</h2>
         <ul className="book_button_list">
@@ -24,12 +24,12 @@ const Card = ({ title, author, id }) => {
         </ul>
       </div>
       <div>
-        <div>
+        <div className="completed_tile">
           <h1>Image Icon</h1>
           <h1>8%</h1>
           <h4>Completed</h4>
         </div>
-        <div>
+        <div className="chapter_tile">
           <h4>Current Chapter</h4>
           <h3>Chapter 3: A Lesson Learned</h3>
           <button type="button">UPDATE PROGRESS</button>
