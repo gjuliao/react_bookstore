@@ -27,11 +27,7 @@ const Form = () => {
       <h1>ADD NEW BOOK</h1>
       <form className="book_form_inputs" onSubmit={handleSubmit}>
         <input className="book_form_inputs_title" onChange={(e) => setTitle(e.target.value)} value={title} name="title" type="text" placeholder="Book Title" required />
-        <select id="genre" className="book_form_inputs_category" onChange={(e) => setAuthor(e.target.value)} value={author} name="genre" required>
-          <option value="Science Fiction">Science Fiction</option>
-          <option value="Fiction">Fiction</option>
-          <option value="Comedy">Comedy</option>
-        </select>
+        <input className="book_form_inputs_category" onChange={(e) => setAuthor(e.target.value)} value={author} name="author" type="dropdown" placeholder="Book Author" required />
         <button type="submit">ADD BOOK</button>
       </form>
     </div>
