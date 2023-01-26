@@ -1,24 +1,28 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from '../axiosInstance';
 
 const GET_BOOKS = 'GET_BOOKS';
 const POST_BOOKS = 'POST_BOOKS';
 const DELETE_BOOK = 'DELETE_BOOK';
 
-export const fetchData = async (dispatch) => {
-  try {
-    const res = await axios.get('books');
-    const books = Object.keys(res.data).map((key) => ({
-      item_id: key,
-      ...res.data[key][0],
-    }));
+export const fetchData = createAsyncThunk(
+  'books/getBooks',
+  async (dispatch) => {
+    try {
+      const res = await axios.get('books');
+      const books = Object.keys(res.data).map((key) => ({
+        item_id: key,
+        ...res.data[key][0],
+      }));
 
-    if (res.status === 200) {
-      dispatch({ type: GET_BOOKS, payload: books });
+      if (res.status === 200) {
+        dispatch({ type: GET_BOOKS, payload: books });
+      }
+    } catch (error) {
+      throw new Error(error);
     }
-  } catch (error) {
-    throw new Error(error);
-  }
-};
+  },
+);
 
 export const postBook = (book) => async (dispatch) => {
   const postApi = (data) => axios.post('books', data);

@@ -48,7 +48,7 @@ Card.defaultProps = {
 };
 
 Card.propTypes = {
-  id: propTypes.number,
+  id: propTypes.string,
   author: propTypes.string,
   title: propTypes.string,
 };
