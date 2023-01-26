@@ -1,14 +1,14 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { deleteData } from '../redux/books/books';
 
 const Card = ({ title, author, id }) => {
   const dispatch = useDispatch();
 
   const handleClick = (e) => {
     e.preventDefault();
-    dispatch(removeBook(parseInt(e.target.id, 10)));
+    dispatch(deleteData(id));
   };
 
   return (
@@ -48,7 +48,7 @@ Card.defaultProps = {
 };
 
 Card.propTypes = {
-  id: propTypes.number,
+  id: propTypes.string,
   author: propTypes.string,
   title: propTypes.string,
 };

@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { newBook } from '../redux/books/books';
+import { postBook } from '../redux/books/books';
 
 const Form = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const id = Math.floor(Math.random() * 100);
-    const book = { title, author, id };
-    dispatch(newBook(book));
+    const category = 'Fiction';
+
+    const book = {
+      title, author, item_id: uuidv4(), category,
+    };
+    dispatch(postBook(book));
+    setTitle('');
+    setAuthor('');
   };
 
   return (
