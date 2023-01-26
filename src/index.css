@@ -158,3 +158,8 @@
 .book_form_inputs button {
   width: 10%;
 }
+
+.checkstatus h2 {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}

@@ -1,51 +1,26 @@
-import React from 'react';
-import propTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchData } from '../redux/books/books';
 import Form from './Form';
+import Card from './Card';
 
-const Book = ({ books }) => {
-  const { author, title } = books;
+const Book = () => {
+  const books = useSelector((state) => state.books);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchData);
+  }, [dispatch]);
 
   return (
     <>
-      <div className="card">
-        <div className="main_tile">
-          <h4 className="book_genre">Science Fiction</h4>
-          <h1>{title}</h1>
-          <h2>{author}</h2>
-          <ul className="book_button_list">
-            <li><a href="/">Comments |</a></li>
-            <li><a href="/">Remove  |</a></li>
-            <li><a href="/">Edit</a></li>
-          </ul>
-        </div>
-        <div className="completed_tile">
-          <div>
-            <h1>8%</h1>
-          </div>
-          <div className="completed_tile_content">
-            <h1>Image Icon</h1>
-            <h4>Completed</h4>
-          </div>
-        </div>
-        <div className="chapter_tile">
-          <h4>Current Chapter</h4>
-          <h3>Chapter 3: A Lesson Learned</h3>
-          <button type="button">UPDATE PROGRESS</button>
-        </div>
-      </div>
+      { books.map((book) => (
+        <Card key={book.item_id} id={book.item_id} author={book.author} title={book.title} />
+      ))}
       <Form />
     </>
   );
 };
 
 export default Book;
-
-Book.defaultProps = {
-  books: null,
-  author: '',
-};
-
-Book.propTypes = {
-  books: propTypes.instanceOf(Object),
-  author: propTypes.string,
-};
