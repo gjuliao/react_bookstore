@@ -1,13 +1,21 @@
 import React from 'react';
+import '../index.css';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
-  <nav>
-    <h1>Bookstore CMS</h1>
-    <ul>
-      <NavLink to="/">Books</NavLink>
-      <NavLink to="/categories">Categories</NavLink>
-    </ul>
+  <nav className="navbar">
+    <div className="navbar_main">
+      <h1>Bookstore CMS</h1>
+      <ul className="nav_list">
+        <NavLink className="nav_link" to="/">BOOKS</NavLink>
+        <NavLink className="nav_link" to="/categories">CATEGORIES</NavLink>
+      </ul>
+    </div>
+    <div className="nav_list_user">
+      <span className="material-symbols-outlined">
+        account_circle
+      </span>
+    </div>
   </nav>
 );
 

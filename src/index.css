@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&family=Roboto+Slab:wght@300;400;500;700&display=swap);
+
 * {
   padding: 0;
   margin: 0;
@@ -5,17 +7,269 @@
   font-size: 16px;
 }
 
+body {
+  background-color: #f4f5f9;
+}
+
 .App {
   width: 90%;
   margin: auto;
   margin-top: 2%;
+  background-color: #fafafa;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0.7em;
+  margin: auto;
+}
+
+.navbar_main {
+  display: flex;
+  width: 45%;
+}
+
+.navbar h1 {
+  font-size: 1.9em;
+  padding-left: 4%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #0290ff;
+}
+
+.nav_link {
+  margin-right: 2em;
+  opacity: 0.5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.813rem;
+  color: #121212;
+  letter-spacing: 1.9px;
+}
+
+.nav_list {
+  display: flex;
+  margin-left: 10%;
+  padding-top: 2.8%;
+}
+
+.nav_list a {
+  text-decoration: none;
+}
+
+.nav_list_user {
+  padding-top: 1.3%;
+  margin-right: 2em;
+  opacity: 0.5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.813rem;
+  color: #121212;
+  letter-spacing: 1.9px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  min-height: 5em;
+  width: 90%;
+  background-color: #fff;
+  padding: 1.5em;
+  margin-top: 2em;
+  border-style: solid;
+  border-width: 0.3px;
+  border-color: lightgray;
+}
+
+.main_tile,
+.chapter_tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 27%;
+}
+
+.main_tile h1 {
+  font-size: 1.3em;
+  padding-bottom: 0.4%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.main_tile h2 {
+  padding-bottom: 2.5%;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.book_genre {
+  opacity: 0.5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.813rem;
+  color: #121212;
 }
 
 .book_button_list {
   list-style: none;
+  display: flex;
+  text-decoration: none;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.book_button_list a {
+  text-decoration: none;
+  font-family: "Roboto Slab", serif;
+  color: #4386bf !important;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.book_button_list li {
+  margin-right: 2.5%;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  cursor: pointer;
+}
+
+.completed_tile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.completed_tile_content h1 {
+  font-size: 1.2em;
+  padding-bottom: 0.4%;
+}
+
+.completed_tile_secondary {
+  border-right: solid;
+  padding-right: 3em;
+  border-width: 1px;
+  border-color: lightgray;
+}
+
+.completed_tile_secondary h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: "Roboto Slab", serif;
+  padding-left: 18%;
+  opacity: 0.7;
+}
+
+.circular {
+  height: 4em;
+  color: #0290ff;
+  padding-right: 1em;
+}
+
+.completed_tile_secondary h4 {
+  font-size: 0.875rem;
+  opacity: 0.5;
+  font-family: "Roboto Slab", serif !important;
+  font-weight: 300;
+}
+
+.chapter_tile h4 {
+  font-size: 0.813rem;
+  opacity: 0.5;
+  margin-bottom: -1rem;
+  font-family: "Roboto Slab", serif !important;
+  font-weight: 300;
+  padding-bottom: 6%;
+}
+
+.chapter_tile h3 {
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+  font-family: "Roboto Slab", serif !important;
+  font-weight: 300;
+  padding-bottom: 15%;
+}
+
+.chapter_tile button {
+  width: 55%;
+  font-size: 0.7em;
+  color: white;
+  background-color: #0290ff;
+  border-style: none;
+  padding: 1em;
+  font-family: "Roboto Slab", serif !important;
+  font-weight: 300;
+}
+
+.book_form {
+  width: 90%;
+  margin: auto;
+  margin-top: 2em;
+}
+
+.book_form br {
+  color: red;
+  line-height: 1rem;
+}
+
+.book_form h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #121212;
+  opacity: 0.5;
+  margin-bottom: 1em;
+}
+
+.book_form h3 {
+  margin-bottom: 1.5em;
+}
+
+.book_form_inputs {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2em;
+}
+
+.book_form_inputs input {
+  margin-right: 2em;
+}
+
+.book_form_inputs_title {
+  width: 60%;
+}
+
+.book_form_inputs_category {
+  width: 20%;
+}
+
+.book_form_inputs button {
+  width: 15%;
+  font-size: 1em;
+  color: white;
+  background-color: #0290ff;
+  border-style: none;
+  padding: 0.6em;
 }
 
 .checkstatus h2 {
   padding-top: 2em;
   padding-bottom: 1em;
+}
+
+input[type=text] {
+  padding: 1em;
+  border: 1px solid lightgray;
+  opacity: 0.5;
+}
+
+.material-symbols-outlined {
+  color: #0290ff;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
 }
